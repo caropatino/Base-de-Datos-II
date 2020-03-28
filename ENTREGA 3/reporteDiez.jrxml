@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteDiez" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4289574b-96ed-4568-8977-fd233aa24554">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter "/>
+	<parameter name="fecha_inicio" class="java.sql.Date"/>
+	<parameter name="fecha_fin" class="java.sql.Date"/>
+	<parameter name="lugar" class="java.lang.String"/>
+	<queryString language="plsql">
+		<![CDATA[{call reporteDiez($P{ORACLE_REF_CURSOR}, $P{fecha_inicio}, $P{fecha_fin}, $P{lugar})}]]>
+	</queryString>
+	<field name="HOT_FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="HOT_FOTO"/>
+	</field>
+	<field name="NOMBHOT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBHOT"/>
+	</field>
+	<field name="INICIO" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="INICIO"/>
+	</field>
+	<field name="FIN" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="FIN"/>
+	</field>
+	<field name="CANTRESERVAS" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CANTRESERVAS"/>
+	</field>
+	<field name="PUNTUACION" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PUNTUACION"/>
+	</field>
+	<field name="RW" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="RW"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="32" y="19" width="500" height="40" uuid="be0e83d4-c6ff-4d80-83d4-1d18c4a7697c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LUGARES CON MÁS RESERVACIONES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="20" y="0" width="90" height="30" forecolor="#FFFFFF" backcolor="#071582" uuid="36b16650-010a-43e2-942e-f97b4227820f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e1eca814-b9ea-4b79-a0c9-beca8cb3e41a"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Foto del lugar	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="0" width="90" height="30" forecolor="#FFFFFF" backcolor="#071582" uuid="4c59b669-4d9d-4ec3-8a1f-6da103de871e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b5b9076b-cd1f-48ee-9443-f14fe66c4e77"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre del lugar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="0" width="80" height="30" forecolor="#FFFFFF" backcolor="#071582" uuid="cc753b00-c952-4432-8866-5befebb789a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b5cc3b36-caf9-4ef3-bb2b-9a9d2a9a7a9c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha de inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="0" width="80" height="30" forecolor="#FFFFFF" backcolor="#071582" uuid="71aac0c6-5733-4a67-bc2c-17d5b9e3fd8e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18c87a9a-ca19-4fa3-bf91-45f7b0a62b8f"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha de fin ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="360" y="0" width="90" height="30" forecolor="#FFFFFF" backcolor="#071582" uuid="37cac889-8346-4a4a-b20a-81c787074bf2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c19b800-61ec-45cb-9e17-fa1933161b08"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cantidad de reservas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="450" y="0" width="75" height="30" forecolor="#FFFFFF" backcolor="#071582" uuid="1bddbc03-13db-4b27-9f88-c88d74b464dd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6974bec1-2351-4f0f-a71c-84d052a10666"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Puntuación promedio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="20" y="0" width="90" height="55" uuid="d41e442f-8508-4b13-82f6-aa4e7f42aa44"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[$F{HOT_FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="110" y="0" width="90" height="55" uuid="5d460adf-55a4-414f-83bd-a8a0968ecfe5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b5b9076b-cd1f-48ee-9443-f14fe66c4e77"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMBHOT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="80" height="55" uuid="0d991480-eee0-4e95-9c36-94edff939305">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b5cc3b36-caf9-4ef3-bb2b-9a9d2a9a7a9c"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{INICIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="80" height="55" uuid="2fb2fc10-86e0-4916-9d64-a2792fcbfc06">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18c87a9a-ca19-4fa3-bf91-45f7b0a62b8f"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FIN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="90" height="55" uuid="ea71fbb8-3d7f-4afc-901c-42159f56f02c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c19b800-61ec-45cb-9e17-fa1933161b08"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CANTRESERVAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="75" height="55" uuid="1bcd07d8-ba15-4f48-a0c7-9a916941bdeb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6974bec1-2351-4f0f-a71c-84d052a10666"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PUNTUACION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

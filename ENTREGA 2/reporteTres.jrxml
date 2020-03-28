@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteTres" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="556093ed-1e98-4726-b9ef-8aaf6ce89f18">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter "/>
+	<parameter name="avion" class="java.lang.String"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<queryString language="plsql">
+		<![CDATA[{call reporteTres($P{avion},$P{modelo},$P{ORACLE_REF_CURSOR} )}]]>
+	</queryString>
+	<field name="AERO_FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="AERO_FOTO"/>
+	</field>
+	<field name="FLO_NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_NOMBRE"/>
+	</field>
+	<field name="FLO_FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_FOTO"/>
+	</field>
+	<field name="MOD_TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MOD_TIPO"/>
+	</field>
+	<field name="FLO_VELOCIDAD_MAX" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_VELOCIDAD_MAX"/>
+	</field>
+	<field name="FLO_ALCANCE_MILLAS" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_ALCANCE_MILLAS"/>
+	</field>
+	<field name="FLO_ALTITUD_MAX_FT" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_ALTITUD_MAX_FT"/>
+	</field>
+	<field name="FLO_ENVERGADURA_M" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_ENVERGADURA_M"/>
+	</field>
+	<field name="FLO_ANCHO_CABINA_M" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_ANCHO_CABINA_M"/>
+	</field>
+	<field name="FLO_ALTURA_CABINA_M" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_ALTURA_CABINA_M"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="328" height="50" uuid="4b41bd28-a400-4038-9a03-bb7dfd478392"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Características de la Flota]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="30" uuid="4b06b92b-03f5-4b9c-8f5a-aecd4d73323c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b5bd880a-2a9b-4cd3-9e6a-ed34e65981f6"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Logo de Aerolínea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="42" height="30" uuid="7154e515-2d7a-4f2a-8a9b-80e9db318c21">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8bbcf9e-9db4-4501-a1e7-e7b1d1a28004"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="50" height="30" uuid="45d7fc55-97fb-4f12-9b2a-7379f575887b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22769f0d-3f65-4570-8b0a-92ed16dbb79f"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Foto del Avión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="0" width="48" height="30" uuid="07124606-c168-4e6e-9c51-454b9e3268ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8b32dea0-3a85-41ad-9dc6-cb53f3798c0e"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="50" height="30" uuid="b875a926-bd75-4bbb-a7e3-e556d322548b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c2d59e3-83a8-44bf-bd4c-37c262b002d0"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Velocidad Máxima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="50" height="30" uuid="e0b6e547-8de9-4a56-8f1d-0bb228bacf5a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c21a5eb-bbbc-41dd-b220-66527fe4906e"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alcance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="50" height="30" uuid="21cccf0a-5983-4b3f-a088-e9d92e4fcfac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61d509e5-76e9-4377-95b2-4307787c4d53"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altitud Máxima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="60" height="30" uuid="76ae0d66-adba-432b-9ce0-0486734fe411">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c300a2f6-0a83-42ff-b0fe-04abd023b783"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Envergadura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="60" height="30" uuid="f5eb1cd4-85ae-4f2c-bfb6-fe7a3377d433">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4d905ff-f4e6-4f39-8b96-d0fdc6d6a63d"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ancho de la Cabina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="60" height="30" uuid="595d7be0-ee76-4e76-9529-bbb46cb0a2d1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52707955-1382-46dc-a6cf-5953dcb15915"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altura de la Cabina]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="50" height="50" uuid="b865df8c-5dc8-459c-8d09-d155fb3a7926"/>
+				<imageExpression><![CDATA[$F{AERO_FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="60" y="0" width="42" height="30" uuid="4c91325b-31ed-4813-a3e1-731b915fcdc7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8bbcf9e-9db4-4501-a1e7-e7b1d1a28004"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="110" y="0" width="50" height="50" uuid="31fa80c0-d0b8-42fc-8341-68382407d411"/>
+				<imageExpression><![CDATA[$F{FLO_FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="172" y="0" width="48" height="30" uuid="2d05c2a0-8724-451a-a897-516b0cb4232b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8b32dea0-3a85-41ad-9dc6-cb53f3798c0e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{MOD_TIPO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="50" height="30" uuid="ef135137-94e6-41c8-b4a8-29961f3edbf6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c2d59e3-83a8-44bf-bd4c-37c262b002d0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_VELOCIDAD_MAX}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="50" height="30" uuid="c5d838c3-fad7-4839-81c2-03b2e9e6bfad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c21a5eb-bbbc-41dd-b220-66527fe4906e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_ALCANCE_MILLAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="50" height="30" uuid="651fb180-974f-499d-b2f4-346680e48f17">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61d509e5-76e9-4377-95b2-4307787c4d53"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_ALTITUD_MAX_FT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="60" height="30" uuid="10596620-b305-4995-89fd-edfbb78401e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c300a2f6-0a83-42ff-b0fe-04abd023b783"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_ENVERGADURA_M}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="60" height="30" uuid="9f273051-5348-40ef-8b5e-9601d8a31ac4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4d905ff-f4e6-4f39-8b96-d0fdc6d6a63d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_ANCHO_CABINA_M}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="60" height="30" uuid="5bd5baa0-9f49-41cc-bf83-3d87fefeff12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52707955-1382-46dc-a6cf-5953dcb15915"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLO_ALTURA_CABINA_M}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

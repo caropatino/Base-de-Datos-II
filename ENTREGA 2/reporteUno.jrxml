@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteUno" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ddf51534-989c-4dfd-b4b0-f6f3278adbd7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString language="plsql">
+		<![CDATA[{call reporteUno($P{ORACLE_REF_CURSOR} )}]]>
+	</queryString>
+	<field name="AERO_NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AERO_NOMBRE"/>
+	</field>
+	<field name="AERO_FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="AERO_FOTO"/>
+	</field>
+	<field name="AERO_TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AERO_TIPO"/>
+	</field>
+	<field name="FLOTAS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FLOTAS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="290" height="40" uuid="0e607329-1c69-46ba-befd-3ec126d6046a"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aerolíneas Registradas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="100" height="30" uuid="0260c7c2-5139-4757-8af0-c10476ea5bd2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64f6d261-e4e8-4ada-9a17-e944a0e1df12"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Logo de Aerolínea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="100" height="30" uuid="1ea39ce0-a924-4ae2-a8e8-a21cb230d19f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="036b3533-c232-42eb-a723-49145937751b"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Aerolínea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="0" width="100" height="30" uuid="ef609750-fb1c-4058-80b4-1393d641764c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e06ca3c5-cdbb-4f24-a949-ccdd5ef287af"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FLOTA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="96" splitType="Stretch">
+			<textField>
+				<reportElement x="150" y="30" width="100" height="30" uuid="2213504c-edbb-4825-b25b-e3b949d0a02b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="036b3533-c232-42eb-a723-49145937751b"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{AERO_TIPO}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="30" y="0" width="80" height="67" uuid="46f3c420-ee84-4c3b-9e3a-bc55c44e7b35"/>
+				<imageExpression><![CDATA[$F{AERO_FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="290" y="0" width="250" height="80" uuid="0f851ee1-309c-4a4a-9154-c5e56042c217">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e06ca3c5-cdbb-4f24-a949-ccdd5ef287af"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLOTAS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteDos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="beceba42-9f91-4b9f-a326-0c1b35105b50">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter "/>
+	<parameter name="aeroline" class="java.lang.String"/>
+	<queryString language="plsql">
+		<![CDATA[{call reporteDos($P{aeroline},$P{ORACLE_REF_CURSOR} )}]]>
+	</queryString>
+	<field name="AERO_FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="AERO_FOTO"/>
+	</field>
+	<field name="FLO_NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_NOMBRE"/>
+	</field>
+	<field name="FLO_FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="FLO_FOTO"/>
+	</field>
+	<field name="MOD_TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MOD_TIPO"/>
+	</field>
+	<field name="FLOTAS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FLOTAS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="40" uuid="fcb4aeda-6de8-4d45-950a-f06586f13b52"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Flotas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="30" uuid="dcece8ed-16ba-4a01-b147-bbd546851af5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d53b977-2175-4405-90c0-c1bb6ea338f5"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Logo de Aerolínea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="20" width="100" height="30" uuid="063eed26-28b0-48f4-808c-cd241a54b166">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0659abaa-590a-4e39-bb77-be69d9463ddb"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="20" width="100" height="30" uuid="d07e5393-5086-4f44-9e03-143ea1551890">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="40d4c40a-881b-4f92-90b7-db8427c952b8"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Foto Avión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="20" width="100" height="30" uuid="b57fbe2a-1e2b-47fd-97b6-1bf22a22973a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a79057e8-d950-48cb-8c59-27dbada7b1f0"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="15" width="100" height="41" uuid="fc9f04e6-ea58-426e-ada7-51a32290a221">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64908856-7a6b-49ce-baf3-7c595b1e595f"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Asientos disponibles por Clase]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="93" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="70" height="70" uuid="86851173-fc19-4d05-a29d-308d9e85a5a2"/>
+				<imageExpression><![CDATA[$F{AERO_FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="110" y="20" width="100" height="30" uuid="66c7526c-4148-4f20-baaf-484a1b0891a0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0659abaa-590a-4e39-bb77-be69d9463ddb"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FLO_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="242" y="0" width="70" height="70" uuid="295cd527-486e-4eda-afc9-7090c29139af"/>
+				<imageExpression><![CDATA[$F{FLO_FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="340" y="20" width="100" height="30" uuid="59170bf4-c8c3-4a0f-b2c4-d0d2ef4ba2f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a79057e8-d950-48cb-8c59-27dbada7b1f0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{MOD_TIPO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="20" width="100" height="60" uuid="a3ebb32b-cdd8-4eb1-9677-aecb898ddc2a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="64908856-7a6b-49ce-baf3-7c595b1e595f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FLOTAS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
